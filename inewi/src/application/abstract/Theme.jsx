@@ -5,6 +5,11 @@ export const theme = {
     md: "2px",
     lg: "4px",
   },
+  radii: {
+    sm: "4px",
+    md: "8px",
+    lg: "16px",
+  },
   colors: {
     text: "#fff",
     primary: "#52057B",
@@ -12,6 +17,7 @@ export const theme = {
     tertiary: "#BC6FF1",
     background: "#000",
     backgroundContrast: "#fff",
+    backgroundOpacity: "rgba(0, 0, 0, 0.5)",
   },
   fonts: {
     body: "Poppins, sans-serif",
@@ -95,11 +101,18 @@ export const theme = {
   grid: {
     mediaList: {
       gridTemplateColumns: [
+        "repeat(2, 1fr)",
         "repeat(3, 1fr)",
-        "repeat(4, 1fr)",
-        "repeat(6, 1fr)",
-        "repeat(8, 1fr)",
+        "repeat(5, 1fr)",
       ],
+    },
+  },
+  buttons: {
+    primary: {
+      ":hover": {
+        cursor: "pointer",
+        backgroundColor: "secondary",
+      },
     },
   },
   text: {
@@ -108,8 +121,21 @@ export const theme = {
       fontWeight: "regular",
     },
     h3: {
-      fontSize: 2,
+      fontSize: [1, 2],
       fontWeight: "bold",
+      lineHeight: "body",
+    },
+    inherit: {
+      color: "inherit",
+      textDecoration: "inherit",
+    },
+  },
+  message: {
+    primary: {
+      border: "none",
+    },
+    secondary: {
+      border: "none",
     },
   },
   styles: {

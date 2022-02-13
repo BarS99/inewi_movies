@@ -1,18 +1,19 @@
 /** @jsxImportSource theme-ui */
-import React from "react";
 import { Grid } from "theme-ui";
 import Media from "./Media";
 
-const MediaList = () => {
+const MediaList = ({ list }) => {
   return (
     <Grid
       p={4}
-      gap={2}
+      gap={[3, 4]}
       sx={{
         variant: "grid.mediaList",
       }}
     >
-      <Media />
+      {list.results.map((item) => {
+        return <Media item={item} key={item.id} />;
+      })}
     </Grid>
   );
 };
