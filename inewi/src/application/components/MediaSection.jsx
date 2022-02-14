@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/** @jsxImportSource theme-ui */
+import { useState } from "react";
 import MediaList from "../components/MediaList";
 import {
   Container,
@@ -42,14 +43,16 @@ const MediaSection = ({ list, title, isLoading }) => {
           gap={4}
           sx={{
             gridTemplateColumns: ["1fr", "2fr 1fr"],
+            position: "relative",
+            zIndex: 5,
           }}
         >
           <Heading>{title}</Heading>
           <Box>
             <Select name="sort_by" id="sort" value={sort} onChange={handleSort}>
               <option value="">Sort results by</option>
-              <option value="popularity.asc">Popularity ascending</option>
               <option value="popularity.desc">Popularity descending</option>
+              <option value="popularity.asc">Popularity ascending</option>
               <option value="release_date.asc">Release date ascending</option>
               <option value="release_date.desc">Release date descending</option>
               <option value="vote_average.asc">Vote average ascending</option>
@@ -66,7 +69,7 @@ const MediaSection = ({ list, title, isLoading }) => {
         }}
       >
         {list.results.length > 0 && !isLoading ? (
-          <MediaList list={list} title="Trending now" />
+          <MediaList list={list.results} title="Trending now" />
         ) : isLoading ? (
           <Flex
             p={4}

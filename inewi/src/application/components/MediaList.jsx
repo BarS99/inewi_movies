@@ -11,7 +11,7 @@ const MediaList = ({ list }) => {
         variant: "grid.mediaList",
       }}
     >
-      {list.results.map((item) => {
+      {list.map((item) => {
         return <Media item={item} key={item.id} />;
       })}
     </Grid>

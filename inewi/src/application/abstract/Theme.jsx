@@ -23,15 +23,15 @@ export const theme = {
     body: "Poppins, sans-serif",
     heading: "Poppins, sans-serif",
   },
-  fontSizes: ["0.75rem", "1rem", "1.25rem", "1.5rem", "2rem", "3rem"],
+  fontSizes: ["0.75rem", "1rem", "1.25rem", "1.5rem", "2rem", "3rem", "5rem"],
   fontWeights: {
     light: 300,
     regular: 400,
     bold: 700,
   },
   lineHeights: {
+    heading: 1.4,
     body: 1.5,
-    heading: 1.125,
     text: 1.75,
   },
   links: {
@@ -66,6 +66,9 @@ export const theme = {
     },
   },
   icon: {
+    xs: {
+      fontSize: 0,
+    },
     sm: {
       fontSize: 2,
     },
@@ -104,14 +107,33 @@ export const theme = {
         "repeat(2, 1fr)",
         "repeat(3, 1fr)",
         "repeat(5, 1fr)",
+        "repeat(6, 1fr)",
       ],
+    },
+    mediaView: {
+      gridTemplateColumns: ["12fr", "5fr 7fr"],
     },
   },
   buttons: {
     primary: {
+      backgroundColor: "primary",
       ":hover": {
         cursor: "pointer",
         backgroundColor: "secondary",
+      },
+    },
+    secondary: {
+      backgroundColor: "secondary",
+      ":hover": {
+        cursor: "pointer",
+        backgroundColor: "primary",
+      },
+    },
+    tertiary: {
+      backgroundColor: "tertiary",
+      ":hover": {
+        cursor: "pointer",
+        backgroundColor: "tertiary",
       },
     },
   },

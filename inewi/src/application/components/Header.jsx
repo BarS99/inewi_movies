@@ -1,5 +1,6 @@
 /** @jsxImportSource theme-ui */
-import { useState } from "react";
+import { useState, useLayoutEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Container, Flex, NavLink, Box, Heading } from "theme-ui";
 import { NavLink as RouterLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,11 +9,18 @@ import {
   faBars,
   faStar,
   faTv,
+  faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
+  const navigate = useNavigate();
   const [menuActive, setMenuActive] = useState(false);
   const [menu] = useState([
+    {
+      icon: faSearch,
+      text: "Search",
+      path: "/search",
+    },
     {
       icon: faTv,
       text: "To watch",
@@ -31,6 +39,12 @@ const Header = () => {
     });
   };
 
+  useLayoutEffect(() => {
+    setMenuActive(() => {
+      return false;
+    });
+  }, [navigate]);
+
   return (
     <Box
       as="header"
@@ -45,6 +59,7 @@ const Header = () => {
           right: 0,
           bottom: 0,
           left: 0,
+          zIndex: 200,
           pointerEvents: [menuActive ? "initial" : "none", null, "none"],
           background: "#000",
           opacity: [menuActive ? 0.8 : 0, null, 0],
@@ -100,6 +115,7 @@ const Header = () => {
                 width: ["250px", null, "auto"],
                 p: [4, null, 0],
                 flexDirection: ["column", null, "row"],
+                zIndex: 200,
                 borderWidth: 0,
                 borderStyle: "solid",
                 borderLeftWidth: ["sm", null, 0],

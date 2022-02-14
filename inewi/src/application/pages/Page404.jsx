@@ -1,3 +1,4 @@
+/** @jsxImportSource theme-ui */
 import React from "react";
 
 const Page404 = () => {
