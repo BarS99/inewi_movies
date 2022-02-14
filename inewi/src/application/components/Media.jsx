@@ -53,7 +53,7 @@ const Media = ({ item }) => {
       </Box>
       <Box>
         <Heading
-          as="h3"
+          as="h2"
           sx={{
             variant: "text.h3",
           }}

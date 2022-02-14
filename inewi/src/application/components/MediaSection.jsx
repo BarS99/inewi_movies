@@ -47,7 +47,7 @@ const MediaSection = ({ list, title, isLoading }) => {
             zIndex: 5,
           }}
         >
-          <Heading>{title}</Heading>
+          <Heading as="h1">{title}</Heading>
           <Box>
             <Select name="sort_by" id="sort" value={sort} onChange={handleSort}>
               <option value="">Sort results by</option>
@@ -93,7 +93,7 @@ const MediaSection = ({ list, title, isLoading }) => {
             }}
             p={4}
           >
-            <Message variant="message.secondary">
+            <Message variant="message.primary">
               Failed to load the data!
             </Message>
           </Container>

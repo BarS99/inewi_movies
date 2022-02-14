@@ -189,9 +189,7 @@ const MediaView = () => {
           }}
           p={4}
         >
-          <Message variant="message.secondary">
-            Failed to load the data!
-          </Message>
+          <Message variant="message.primary">Failed to load the data!</Message>
         </Container>
       )}
     </Container>

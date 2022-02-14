@@ -155,9 +155,11 @@ export const theme = {
   message: {
     primary: {
       border: "none",
+      backgroundColor: "primary",
     },
     secondary: {
       border: "none",
+      backgroundColor: "secondary",
     },
   },
   styles: {
